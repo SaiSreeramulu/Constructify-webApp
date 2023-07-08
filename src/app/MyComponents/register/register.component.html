@@ -1,0 +1,58 @@
+<h1 align="center"> Employee Registration </h1>
+
+<form #regFrom="ngForm" (ngSubmit)="userRegistration(regFrom.value)">
+
+<table align="center" >
+    <tr>
+        <td align="right">UserID</td>
+        <td align="left"><input type="number" name="userId" ngModel /> </td>
+    </tr>
+
+    <tr>
+        <td align="right">User Name</td>
+        <td align="left"><input type="text" name="userName" ngModel /> </td>
+    </tr>
+
+    <tr>
+        <td align="right">Address</td>
+        <td align="left"><input type="text" name="address" ngModel /> </td>
+    </tr>
+
+    <tr>
+        <td align="right">Phone Number</td>
+        <td align="left"><input type="number" name="phnNumber" ngModel /> </td>
+    </tr>
+
+  
+
+    <tr>
+        <td align="right">Country</td>
+        <td align="left" >
+            <select name="country" ngModel style="width: 190px;">
+                <option value=""> Select Country </option>
+
+                <option value="{{country.cca3}}" *ngFor="let country of countries"> {{country.name.common}} </option>
+
+            </select>
+        </td>
+    </tr>
+
+   
+
+    <tr>
+        <td align="right">Email-ID</td>
+        <td align="left"><input type="email" name="emailId" ngModel /> </td>
+    </tr>
+
+    <tr>
+        <td align="right">Password</td>
+        <td align="left"><input type="password" name="password" ngModel /> </td>
+    </tr>
+
+    <tr>
+        <td align="right"></td>
+        <td align="left"> <button class="btn btn-primary"> Register </button> </td>
+    </tr>
+
+</table>
+</form>

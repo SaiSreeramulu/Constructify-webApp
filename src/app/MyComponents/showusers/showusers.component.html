@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+
+<h1 align="center">List of Users</h1>
+<br/>
+
+<div class="container" *ngIf="user">
+    <table class="table table-sm text-center table-hover table-bordered table-striped">
+        <thead class="bg-info">
+            <tr>
+                <th> userId </th>
+                <th> UserName </th>
+                <th> Address </th>
+                <th> Phn Number </th>
+                <th> Country </th>
+                <th> EmailId </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of user">
+                <td> {{u.userId }} </td>
+                <td> {{u.userName }} </td>
+                <td> {{u.address }} </td>
+                <td> {{u.contactNo }} </td>
+                <td> {{u.country }} </td>
+                <td> {{u.emailId }} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
