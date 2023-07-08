@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,15 +8,22 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   isUserLoggedIn: boolean;
+  loginStatus: Subject<any>;
 
   //Implementing Dependency Injection for HttpClient using Constructor
   constructor(private http: HttpClient) { 
     this.isUserLoggedIn = false;
+    this.loginStatus = new Subject();
   }
 
   //LoginSuccess
   setUserLoggedIn() {
     this.isUserLoggedIn = true;
+    this.loginStatus.next(true);
+  }
+
+  getLoginStatus(): any {
+    return this.loginStatus.asObservable();
   }
 
   getUserLoggedStatus(): boolean {
@@ -24,6 +32,7 @@ export class UserService {
 
   setUserLogout() {
     this.isUserLoggedIn = false;
+    this.loginStatus.next(false);
   }
 
   getAllCountries(): any {

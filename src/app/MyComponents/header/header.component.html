@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home
+            <a class="nav-link active" routerLink="Home">Home
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
@@ -20,8 +20,17 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="#"> About us </a>
           </li>
-          
         </ul>
+        <form class="d-flex">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="Cart"> Cart </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.disabled]="!loginStatus" routerLink="Logout">Logout</a>
+            </li>
+          </ul>
+        </form>
       </div>
     </div>
   </nav>

@@ -10,6 +10,9 @@ import { HeaderComponent } from './MyComponents/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ShowusersComponent } from './MyComponents/showusers/showusers.component';
+import { HomeComponent } from './MyComponents/home/home.component';
+import { LogoutComponent } from './MyComponents/logout/logout.component';
+import { CartComponent } from './MyComponents/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ShowusersComponent } from './MyComponents/showusers/showusers.component
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
-    ShowusersComponent
+    ShowusersComponent,
+    HomeComponent,
+    LogoutComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

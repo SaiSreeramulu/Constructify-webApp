@@ -1,7 +1,16 @@
-<div class="container">
-    <div style="width:450px">
 
-        <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" novalidate>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+
+
+<br /><br />
+<div class="container">
+    <div style="width: 300px">
+
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" novalidate style="text-align: center;">
 
             <table>
                 <tr>
@@ -9,13 +18,13 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                             <input class="form-control" type="text" placeholder="Enter Email-Id" name="loginId"
-                                #loginId="ngModel" ngModel required minlength="2" maxlength="20" /><br />
-                        </div><br />
+                                #loginId="ngModel" ngModel required minlength="5" maxlength="20" />
+                        </div><br/>
                     </td>
 
                     <td>
                         <div *ngIf="loginId.errors?.['required']  && loginId.touched"> Please Provide Login-ID </div>
-                        <div *ngIf="loginId.errors?.['minlength'] && loginId.touched"> Please Provide Atleast 2
+                        <div *ngIf="loginId.errors?.['minlength'] && loginId.touched"> Please Provide Atleast 5
                             Characters </div>
                     </td>
                 </tr>
@@ -25,12 +34,12 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <input class="form-control" type="password" placeholder="Enter Password" name="password"
-                                #password="ngModel" ngModel required minlength="2" maxlength="10" /><br />
+                                #password="ngModel" ngModel required minlength="3" maxlength="10" /><br />
                         </div><br />
                     </td>
                     <td>
                         <div *ngIf="password.errors?.['required']  && password.touched"> Please Provide Password </div>
-                        <div *ngIf="password.errors?.['minlength'] && password.touched"> Please Provide Atleast 2
+                        <div *ngIf="password.errors?.['minlength'] && password.touched"> Please Provide Atleast 3
                             Characters </div>
                     </td>
                 </tr>
@@ -38,7 +47,7 @@
                 <tr>
                     <td>
                         <button [disabled]="!loginForm.valid" class="btn btn-primary"> Login </button>
-                        <span>New user?<a routerLink="Register">Register</a></span>
+                        <span>&nbsp;New user?<a routerLink="Register">&nbsp;Register</a></span>
                     </td>
                 </tr>
             </table>

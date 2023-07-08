@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   async login(loginForm: any) {
     console.log(loginForm);   
 
-    if (loginForm.loginId === 'HR' && loginForm.password === 'HR') {
+    if (loginForm.loginId === 'ADMIN' && loginForm.password === 'ADMIN') {
       alert('Welcome to HR Home Page');
      
       this.service.setUserLoggedIn();
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         if (this.user != null) {
           this.service.setUserLoggedIn();
           alert('User loggedIn successfully!!');
-          this.router.navigate(['showUsers']);
+          this.router.navigate(['Home']);
         } else {
           alert('Invalid Credentials');
           this.router.navigate(['Login']);
